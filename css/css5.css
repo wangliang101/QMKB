@@ -1,0 +1,58 @@
+*{margin: 0;padding: 0;}
+/*第五页*/
+body,html{
+    position: relative;
+    height: 100%;
+}
+#denlu{
+    width:100%;
+    height:100%;
+    /*background-color: red;*/
+    font-size: 0.2rem;
+
+}
+#input{
+    width: 75%;
+    margin: 20% auto;
+}
+#input input{
+    background-color: transparent;
+    border: 3px solid #bbbbbb;
+    width: 2rem;
+    height: 0.27rem;
+    text-align:center;
+}
+#denglu_pic{
+    width: 100%;
+    height:2.5rem ;
+    /*background-color: blue;*/
+}
+#denglu_pic img{
+   display: block;
+    margin: 0 auto;
+}
+#button{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1rem
+}
+#bt1 ,#bt2{
+    margin-left: 10%;
+    font-size: 0.15rem;
+    width: 0.7rem;
+    height: 0.3rem;
+    box-shadow: 2px 2px 2px 2px #bbbbbb;
+}
+#bot{
+    border-top: 3px solid rgb(187,187,187);
+    padding-top: 5px;
+    font-size: 0.15rem;
+    color:rgb(102,102,102);
+    width: 100%;
+    text-align: center;
+}
+#back a{
+    color:#bbbbbb;
+    text-decoration: none;
+    font-size: 0.2rem;
+}

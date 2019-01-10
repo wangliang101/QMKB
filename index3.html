@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="js/fontsize.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <title>三页</title>
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/css3.css">
+</head>
+<body>
+<img src="img/logo.png" id="log" alt="" width="232" height="192">
+<div id="two">
+    <form action="api/login.php" method="post" enctype="multipart/form-data">
+        <ul>
+            <li>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;
+                <input type="text" name="name" id="name" placeholder="请输入真实姓名"></li>
+            <li> 学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;&nbsp;
+                <input type="text" name="number" id="number" placeholder="请输入学号"></li>
+            <li>密码设置&nbsp;&nbsp;
+                <input type="text" name="pass" id="pass" placeholder="密码是您登录的凭证"></li>
+            <li>专业班级&nbsp;&nbsp;
+                <input type="text" name="xi" id="xi" placeholder="例如：网络工程1501"></li>
+            <li>联系电话&nbsp;&nbsp;
+                <input type="text" name="phone" id="phone" placeholder="请输入常用电话"></li>
+            <li> 证件照片&nbsp;&nbsp;
+                <input type="file" name="img" id="img"></li>
+        </ul>
+        <p id="user">请确认个人信息真实准确，后台核实后即可使用</p>
+        <input type="button" id="fh" value="确认提交">
+    </form>
+</div>
+
+</body>
+<script src="js/inde3.js"></script>
+</html>

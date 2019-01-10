@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="js/fontsize.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <title>二页</title>
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/css2.css">
+</head>
+<body>
+<!--头部-->
+<div id="head">联系我们</div>
+<!--轮播图-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="img/slide1.jpg" alt="">
+        </div>
+        <div class="swiper-slide"><img src="img/slide2.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/slide3.jpg" alt=""></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <!--<div class="swiper-pagination"></div>-->
+
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+<ul id="ul">
+    <li><a href=""><img src="img/indexph1.png" alt=""></a></li>
+    <li><a href=""><img src="img/indexph2.png" alt=""></a></li>
+    <li><a href=""><img src="img/indexph3.png" alt=""></a></li>
+</ul>
+<a href="index1.html" id="fh">返回主页</a>
+<p id="bgdd">办公地点：大学生创业中心2楼</p>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+//        loop: true,
+        autoplay: 2000,//可选选项，自动滑动
+        // 如果需要分页器
+//        pagination: '.swiper-pagination',
+
+        // 如果需要前进后退按钮
+//        nextButton: '.swiper-button-next',
+//        prevButton: '.swiper-button-prev',
+
+        // 如果需要滚动条
+        scrollbar: '.swiper-scrollbar',
+    })
+</script>
+</body>
+</html>

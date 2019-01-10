@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>我要帮忙</title>
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/css6.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <script src="js/fontsize.js"></script>
+</head>
+<body>
+<div id="bang">
+    <div id="top">
+        <span><a href="index1.html" style="text-decoration: none">返回</a></span>
+        <span id="top_1">我要服务</span>
+        <a href="index4.html"><span id="icon"></span></a>
+    </div>
+    <div id="lunbo">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><h2 >全民快帮欢迎您</h2></div>
+                <div class="swiper-slide"><h2>全民快帮欢迎您</h2></div>
+                <div class="swiper-slide"><h2>全民快帮欢迎您</h2></div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="box">-->
+
+    <!--</div>-->
+    <div class="one">
+        <div>
+            <div class="left">
+                <div class="pic"><img src="img/logo.png" style="width: 0.8rem;height: 0.8rem;"></div>
+            </div>
+            <div class="right">
+                <div class="right1">
+                    <div class="title"><b>我要拼车</b></div>
+                    <div class="body11">从科师正门到秦皇岛火车站<br>￥20</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<img src="" alt="">
+</body>
+<script>
+    $.get("api/php6.php", function (data) {
+        var box = "";
+        for (var i = 0; i < data.length; i++) {
+            box = box + ("<div class='box1'><div class='left'><div class='pic'>酬金：<br>"+data[i].money+"元</div></div>" +
+                    "<div class='right'><div class='right1'><div class='title'><b>" + data[i].type + "</b>" + "<div class='body11'>" + data[i].content + "</div></div></div></div>" +
+                    "<div class='right2'><div><img src='img/001.png'></div><div id='test' style='display: none'>" + data[i].id + "</div></div></div><hr>")
+        }
+        $(".one").html(box)
+        $(".box1").click(function () {
+            var miss = $(this).find("#test").html()
+            $.ajax({
+                type:"get",
+                dataType:"json",
+                url:"api/php8.php",
+                data:{
+                    send:miss
+                },
+                success:function (data) {
+//                    alert(data.name)
+                    if(data!=""){
+                        window.location.href="index8.html"
+                    }
+                },
+                error:function () {
+                    alert("shibai")
+                }
+            })
+        })
+    }, "json")
+
+
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        autoplay: 1000,
+        loop: true
+    })
+</script>
+</html>

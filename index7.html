@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>我要求助</title>
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <script src="js/fontsize.js"></script>
+    <script src="js/index7.js"></script>
+</head>
+<body>
+<div class="headr">
+    <h6><a href="index1.html">返回</a></h6>
+    <p>我要求助</p>
+    <a href="index4.html"><div class="me"></div></a>
+</div>
+<!--<div class="body1">-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">全民快帮欢迎您</div>
+        <div class="swiper-slide">全民快帮欢迎您</div>
+        <div class="swiper-slide">全民快帮欢迎您</div>
+    </div>
+</div>
+<!--</div>-->
+<div class="body2">
+    <div class="pic7">
+        <img src="img/logo.png" style="width:1rem;height:1rem;" alt="">
+    </div>
+</div>
+<div class="foot">
+    <form action="api/php7.php" id="tj7" method="post" enctype="multipart/form-data">
+        <p><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;</span><input type="text" name="uname" id="uname" value=""/></p>
+        <p><span>联系电话&nbsp;</span><input type="text" name="uphone" id="uphone" value=""/></p>
+        <input type="hidden" name="xuanze" id="xuanze">
+        <p>
+            <span>任务概述</span>
+            <select name="xuanze" onchange="did(this.options[this.selectedIndex].value)" id="type">
+                <option value="取快递">取快递</option>
+                <option value="带买饭">带买饭</option>
+                <option value="学霸辅导功课">学霸辅导功课</option>
+                <option value="更多">更多</option>
+                <option value="100" selected="selected"></option>
+            </select>
+        </p>
+        <p class="miaoshu">具体描述&nbsp;<textarea type="text" name="miaoshu" id="miaoshu" value=""/></textarea></p>
+        <p><span>酬&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金&nbsp;</span><input type="text" name="price" id="price" value=""/></p>
+        <br />
+        <p id="tijiao"><input type="button" id="tj" value="提交"></p>
+    </form>
+</div>
+<script>
+    function did(a) {
+        document.getElementById("xuanze").value = a;//赋值
+        document.getElementById("type").style.background = "#ddd1dd"
+    }
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        autoplay: 1000,
+        loop: true
+    })
+</script>
+</body>
+</html>

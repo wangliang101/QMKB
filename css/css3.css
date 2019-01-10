@@ -1,0 +1,58 @@
+*{
+    margin:0;
+    padding:0;
+}
+#log{
+    width:1.5rem;
+    height:1.5rem;
+    position:absolute;
+    left:50%;
+    margin-left:-0.75rem;
+    top:5%;
+}
+html{
+    height:100%;
+    position: relative;
+}
+body{
+    height: 100%;
+}
+#two{
+    width:3.5rem;
+    height:100%;
+    margin:0 auto;
+    /*background:red;*/
+    padding-top: 2.3rem;
+    font-size:0.2rem;
+}
+#two ul li{
+    font-size:0.15rem;
+    margin-left:10%;
+    list-style:none;
+    margin-top:0.2rem;
+}
+#two ul li input{
+    width:2rem;
+    height:0.2rem;
+}
+#user{
+    width:100%;
+    color:#ccc;
+    font-size:0.15rem;
+    text-align:center;
+    margin-top:0.3rem;
+}
+#fh{
+    display:block;
+    width:1rem;
+    height:0.4rem;
+    border:2px solid rgb(82,94,113);
+    font-size:0.15rem;
+    text-align:center;
+    line-height:0.4rem;
+    color:rgb(82,94,113);
+    text-decoration: none;
+    margin: 0 auto;
+    margin-top: 0.3rem;
+    border-radius: 0.05rem;
+}

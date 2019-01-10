@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="js/fontsize.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swiper-3.3.1.min.js"></script>
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="css/css4.css">
+</head>
+<body>
+<!--头部-->
+<div id="head">
+	<span><a href="index1.html" style="text-decoration: none;float: left;margin-left: 0.1rem; color: #000000; font-size:0.15rem ;">返回</a></span>
+	个人中心
+</div>
+
+<p id="xgxx">修改信息<img src="img/index4ph2.png" alt=""></p>
+<img src="img/logo.png" id="log" alt="">
+<div id="two">
+    <ul>
+        <li>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;&nbsp;<input type="text" id="number" disabled></li>
+        <li>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;<input type="text" id="uname" disabled></li>
+        <li>联系电话&nbsp;&nbsp;<input type="text" id="phone" disabled></li>
+    </ul>
+</div>
+<ul id="ul">
+    <!--<li >确认修改</li>-->
+    <li id="qr"><a href="">确认修改</a></li>
+    <li><a href="index12.html">我的任务</a></li>
+</ul>
+<script>
+     $.ajax({
+                type:"get",
+                dataType:"json",
+                url:"api/getUser.php",
+              
+                success:function (data) {
+                    var user=data;
+                    // var picobj="Idphoto/"+user.pic
+                    $("#number").val(user.xuehao);
+                    $("#uname").val(user.name);
+                    $("#phone").val(user.phone);
+                },
+                error:function (data) {
+                    alert("网络开小差了，请稍后再试")
+                }
+            })
+     $("#qr").click(function(){
+          var uname=$("#uname").val();
+          var number=$("#number").val();
+          var phone=$("#phone").val();
+            //   $.ajax({
+            //     type:"get",
+            //     dataType:"json",
+            //     url:"api/getUser.php",
+              
+            //     success:function (data) {
+            //         console.log(1)
+
+            //     },
+            //     error:function (data) {
+            //         alert(123)
+            //     }
+            // })
+        $.ajax({
+                type:"get",
+                dataType:"json", 
+                url:"api/update.php",
+                data:{
+                    "name":uname,
+                    "number":number,
+                    "phone":phone
+                },
+                success:function (data) {
+                    // var user=data;
+                    // $("#number").val(user.xuehao);
+                    // $("#uname").val(user.name);
+                    // $("#phone").val(user.phone);
+                    if(data==1){
+                        window.location.reload(true)
+                    }
+
+                },
+                error:function (data) {
+                    alert(1)
+                    console.log(data)
+                }
+            })
+     }) 
+     $("#xgxx").click(function(){
+        //alert(1)
+        $("#phone").removeAttr("disabled")
+        $("#qr").css("display","block")
+        
+     })
+</script>
+</body>
+</html>
